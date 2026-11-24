@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>NeuroTabs · Bio-Tabular AI</title>
+<meta name="description" content="NeuroTabs builds Lumi, a bio-tabular foundation model. Synthetic data generation comes first; classification and regression are coming soon.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/png" href="image/logo.png">
+<script>
+  (function(){
+    var t = null;
+    try{ t = localStorage.getItem('theme'); }catch(e){}
+    if(t !== 'light' && t !== 'dark') t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7l8 6 8-6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+    <symbol id="i-synth" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="16" rx="2"/><path d="M3 10h18M3 15h18M9 4v16"/></g></symbol>
+    <symbol id="i-class" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="7" cy="7" r="2.5"/><circle cx="17" cy="7" r="2.5"/><circle cx="7" cy="17" r="2.5"/><path d="M14.5 14.5l5 5M19.5 14.5l-5 5"/></g></symbol>
+    <symbol id="i-reg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 3v18h18"/><path d="M6 17L19 6"/><circle cx="8" cy="12" r="1" fill="currentColor"/><circle cx="12" cy="13" r="1" fill="currentColor"/><circle cx="15" cy="8" r="1" fill="currentColor"/><circle cx="17" cy="11" r="1" fill="currentColor"/></g></symbol>
+  </defs>
+</svg>
+
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="image/logo.png" alt="NeuroTabs logo" width="28" height="28"><span>Neuro<b>Tabs</b></span></a>
+    <nav class="nav-right" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="#lumi">Lumi</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <a class="icon-btn" href="https://github.com/neurotabs" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg><use href="#i-github"/></svg></a>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch light / dark mode" title="Switch light / dark mode"><svg class="sun"><use href="#i-sun"/></svg><svg class="moon"><use href="#i-moon"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero">
+    <div>
+      <div class="eyebrow">Bio-Tabular AI lab</div>
+      <h1>AI built for <b>health and biology</b>.</h1>
+      <p class="lead">We build Lumi, a foundation model for health and biology data: patient records, gene expression and wearables. It starts with synthetic data generation. Classification and regression are coming soon.</p>
+      <div class="tags"><span>Health</span><span>Genomics</span><span>Tabular AI</span><span>Synthetic Data</span></div>
+    </div>
+    <img class="hero-logo" src="image/logo.png" alt="" width="120" height="120">
+  </section>
+
+  <section id="lumi">
+    <h2 class="sec">Lumi</h2>
+    <div class="card">
+      <div class="card-tag">Foundation model · Bio-tabular</div>
+      <h3>Lumi <span class="status up">In development</span></h3>
+      <p>Lumi is one model with three capabilities. We are focusing on <b>synthetic data generation first</b>, because shareable, privacy-safe data is the biggest blocker in health and genomics research. The other two capabilities are being developed and will follow soon.</p>
+      <div class="caps">
+        <div class="cap first"><svg class="cap-ico"><use href="#i-synth"/></svg><b>Synthetic data generation</b><span class="d">Create realistic, privacy-safe rows that keep the patterns of the real data.</span><span class="status up">Focus now</span></div>
+        <div class="cap soon"><svg class="cap-ico"><use href="#i-class"/></svg><b>Classification</b><span class="d">Predict categories like disease status, subtype or risk group.</span><span class="status">Coming soon</span></div>
+        <div class="cap soon"><svg class="cap-ico"><use href="#i-reg"/></svg><b>Regression</b><span class="d">Predict continuous values like lab results, scores or expression levels.</span><span class="status">Coming soon</span></div>
+      </div>
+      <ul class="flakes"><li>EHR</li><li>RNA-seq</li><li>Wearables</li><li>Clinical trials</li></ul>
+      <a class="cta" href="https://github.com/neurotabs/lumi" target="_blank" rel="noopener">Follow Lumi on GitHub →</a>
+    </div>
+  </section>
+
+  <section id="research">
+    <h2 class="sec">Research</h2>
+    <p class="intro">Lumi builds on our work on synthetic tabular data. Read the papers, results and code behind it.</p>
+    <a class="cta" href="research.html">See our research →</a>
+  </section>
+
+  <section id="contact">
+    <h2 class="sec">Get in touch</h2>
+    <div class="contact">
+      <div>
+        <p>Interested in early access to Lumi, a research collaboration or a partnership? We'd love to hear from you.</p>
+        <a class="email-btn" href="mailto:inyoman.m@chula.ac.th"><svg><use href="#i-mail"/></svg>Email us</a>
+        <a class="ghost-btn" href="https://github.com/neurotabs" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>GitHub</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> NeuroTabs · AI for health and biology</span>
+    <span><a href="research.html">Research</a> · <a href="docs.html">Docs</a> · <a href="https://github.com/neurotabs" target="_blank" rel="noopener">GitHub</a> · <a href="https://mahayasa.github.io/" target="_blank" rel="noopener">Founder</a></span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+<script src="site.js"></script>
+</body>
+</html>

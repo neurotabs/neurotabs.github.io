@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Research · NeuroTabs</title>
+<meta name="description" content="NeuroTabs research: papers, results and code on synthetic tabular data generation for health and biology.">
+<meta name="color-scheme" content="dark light">
+<link rel="icon" type="image/png" href="image/logo.png">
+<script>
+  (function(){
+    var t = null;
+    try{ t = localStorage.getItem('theme'); }catch(e){}
+    if(t !== 'light' && t !== 'dark') t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&family=Silkscreen&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2.5" fill="none" stroke="currentColor" stroke-width="2"/><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" d="M4 7l8 6 8-6"/></symbol>
+    <symbol id="i-github" viewBox="0 0 24 24"><path fill="currentColor" d="M12 2a10 10 0 0 0-3.16 19.49c.5.09.68-.22.68-.48v-1.7c-2.78.6-3.37-1.34-3.37-1.34-.45-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.9 1.52 2.34 1.08 2.91.83.09-.65.35-1.09.63-1.34-2.22-.25-4.56-1.11-4.56-4.95 0-1.09.39-1.99 1.03-2.69-.1-.25-.45-1.27.1-2.65 0 0 .84-.27 2.75 1.03a9.5 9.5 0 0 1 5 0c1.91-1.3 2.75-1.03 2.75-1.03.55 1.38.2 2.4.1 2.65.64.7 1.03 1.6 1.03 2.69 0 3.85-2.34 4.7-4.57 4.94.36.31.68.92.68 1.85v2.75c0 .27.18.58.69.48A10 10 0 0 0 12 2z"/></symbol>
+    <symbol id="i-paper" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8z"/><path d="M14 3v5h5M9 13h6M9 17h6"/></g></symbol>
+    <symbol id="i-sun" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2.5M12 19.5V22M2 12h2.5M19.5 12H22M4.9 4.9l1.8 1.8M17.3 17.3l1.8 1.8M4.9 19.1l1.8-1.8M17.3 6.7l1.8-1.8"/></g></symbol>
+    <symbol id="i-moon" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M20 14.5A8.5 8.5 0 0 1 9.5 4 8.5 8.5 0 1 0 20 14.5z"/></symbol>
+  </defs>
+</svg>
+
+<header class="navbar">
+  <div class="container">
+    <a class="brand" href="index.html"><img src="image/logo.png" alt="NeuroTabs logo" width="28" height="28"><span>Neuro<b>Tabs</b></span></a>
+    <nav class="nav-right" aria-label="Main">
+      <ul class="nav-links">
+        <li><a href="index.html#lumi">Lumi</a></li>
+        <li><a href="research.html" class="active" aria-current="page">Research</a></li>
+        <li><a href="docs.html">Docs</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <a class="icon-btn" href="https://github.com/neurotabs" target="_blank" rel="noopener" aria-label="GitHub" title="GitHub"><svg><use href="#i-github"/></svg></a>
+      <button class="icon-btn theme-toggle" id="themeToggle" aria-label="Switch light / dark mode" title="Switch light / dark mode"><svg class="sun"><use href="#i-sun"/></svg><svg class="moon"><use href="#i-moon"/></svg></button>
+    </nav>
+  </div>
+</header>
+
+<main class="container">
+
+  <section class="hero page-head">
+    <div>
+      <div class="eyebrow">Research</div>
+      <h1>Synthetic data for <b>RNA-seq</b>.</h1>
+      <p class="lead">Our current research on generating realistic gene expression data, with open code. This is the foundation Lumi is built on.</p>
+      <div class="tags"><span>RNA-seq</span><span>Ensemble methods</span><span>Synthetic data</span><span>Classification</span></div>
+    </div>
+    <img class="hero-logo" src="image/logo.png" alt="" width="120" height="120">
+  </section>
+
+  <section id="outcomes">
+    <h2 class="sec">Research outcomes</h2>
+    <p class="intro">Our RNA-seq work asks a simple question, and Lumi is where the answer goes next.</p>
+    <ol class="path">
+      <li><div><b>Can synthetic data help RNA-seq classification?</b><span>Ensemble synthetic data generation methods for gene expression data (ongoing).</span></div></li>
+      <li><div><b>Which generator should we use?</b><span>MLDS, a machine learning-driven framework for ensemble synthetic data selection.</span></div></li>
+      <li><div><b>Can one model do it for any table?</b><span>Lumi, a bio-tabular foundation model, starting with synthetic data generation.</span></div></li>
+    </ol>
+  </section>
+
+  <section id="papers">
+    <h2 class="sec">Research and code</h2>
+    <ul class="pubs">
+      <li class="pub">
+        <span class="abbr ongoing">Ongoing</span>
+        <div>
+          <div class="pub-title">RNA-seq Gene Expression Classification</div>
+          <div class="pub-meta">Ensemble synthetic data generation methods for gene expression data, selected by a machine learning-driven framework (MLDS).</div>
+          <div class="pub-meta"><i>Chulalongkorn University, KMUTNB Thailand &amp; Heidelberg University, Germany</i></div>
+          <div class="btns"><a class="btn" href="https://github.com/neurotabs/MLDS" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="software">
+    <h2 class="sec">Our products</h2>
+    <ul class="pubs">
+      <li class="pub">
+        <span class="abbr software">Model</span>
+        <div>
+          <div class="pub-title">Lumi</div>
+          <div class="pub-meta">A bio-tabular foundation model. Synthetic data generation first, classification and regression soon.</div>
+          <div class="btns"><a class="btn" href="https://github.com/neurotabs/lumi" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a></div>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="abbr software">Agent</span>
+        <div>
+          <div class="pub-title">synapse</div>
+          <div class="pub-meta">Synthetic data agent for health and biomedical research (EHR, RNA-seq, wearables).</div>
+          <div class="btns"><a class="btn" href="https://github.com/neurotabs/synapse" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a></div>
+        </div>
+      </li>
+      <li class="pub">
+        <span class="abbr software">Framework</span>
+        <div>
+          <div class="pub-title">MLDS</div>
+          <div class="pub-meta">A machine learning-driven framework for ensemble synthetic data selection.</div>
+          <div class="btns"><a class="btn" href="https://github.com/neurotabs/MLDS" target="_blank" rel="noopener"><svg><use href="#i-github"/></svg>Code</a></div>
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section id="collaborate">
+    <h2 class="sec">Collaborate</h2>
+    <p class="intro">Working on health or genomics data and want to try synthetic data? We are open to research collaborations.</p>
+    <a class="email-btn" href="mailto:inyoman.m@chula.ac.th"><svg><use href="#i-mail"/></svg>Email us</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="container">
+    <span>© <span id="year"></span> NeuroTabs · AI for health and biology</span>
+    <span><a href="index.html">Home</a> · <a href="docs.html">Docs</a> · <a href="https://github.com/neurotabs" target="_blank" rel="noopener">GitHub</a> · <a href="https://mahayasa.github.io/" target="_blank" rel="noopener">Founder</a></span>
+  </div>
+</footer>
+
+<button class="to-top" id="toTop" aria-label="Back to top"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M5 12l7-7 7 7" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></button>
+
+<script src="site.js"></script>
+</body>
+</html>
